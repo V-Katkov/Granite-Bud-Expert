@@ -1,0 +1,48 @@
+.stone-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.stone-img {
+    width: 300px;
+    height: 300px;
+    margin-right: 50px;
+}
+.stone-info__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.stone-info__text {
+    color: var(--logo-gray2);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.stone-info__more {
+    display: block;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 20px;
+    width: 200px;
+}
+
+
+@media (max-width: 767px) {
+    .stone-item {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .stone-item:not(:last-of-type) {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .stone-img {
+        margin-right: 0;
+    }
+    .stone-info__title {
+        margin-bottom: 10px;
+    }
+    .stone-info__more {
+        width: 100%;
+    }
+}

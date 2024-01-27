@@ -1,0 +1,148 @@
+.goods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.goods-item {
+    margin-bottom: 50px;
+}
+.goods-item__photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+.goods-item__photo_img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.goods-item__photo_img::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+.goods-item__photo_img::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    right: 30px;
+    background: url('/img/base/tapPC.png');
+    background-size: 100%;
+    opacity: 0.8;
+    transition: all 300ms ease;
+}
+.goods-item__photo_img > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* HOVER */
+.imgDynamics {
+    display: none;
+}
+.goods-item__photo:hover .imgDynamics{
+    display: block;
+}
+.goods-item__photo:hover .imgStatic{
+    display: none;
+}
+.goods-item__photo:hover .goods-item__photo_img::before {
+    opacity: 0;
+}
+
+/* INFO */
+
+.goods-item__info {
+    padding: 0 15px;
+}
+.goods-item__info_title {
+    font-size: 16px;
+}
+.goods-item__info_art {
+    color: var(--logo-gray1);
+    font-size: 14px;
+}
+.goods-item__info_art::before {
+    display: inline-block;
+    content: 'Арт:';
+    padding-right: 5px;
+    margin-bottom: 15px;
+}
+.goods-item__info_bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.goods-item__info_price {
+    font-size: 20px;
+    font-weight: 300;
+}
+.goods-item__info_price::after {
+    display: inline-block;
+    content: 'UAH';
+    padding-left: 5px;
+}
+.goods-item__info_available::before {
+    display: inline-block;
+    content: 'в наявності';
+    color: var(--available, #55A13A)
+}
+.goods-item__info_available.not::before {
+    display: inline-block;
+    content: 'під замовлення';
+    color: var(--notavailable, #c92d2d)
+}
+.goods-item__info_link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: var(--black);
+    margin-bottom: 20px;
+}
+.goods-item__info_link::after {
+    display: inline-block;
+    content: 'Детально';
+    color: var(--white);
+}
+
+
+@media (max-width: 767px) {
+    .goods {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .goods-item {
+        border-bottom: 1px solid #ececec;
+        margin-bottom: 20px;
+    }
+    .goods-item__photo:target {
+        background: red;
+    }
+    .goods-item__info {
+        padding: 0;
+    }
+    .goods-item__photo_img::before {
+        background: url('/img/base/tapSmart.png');
+        background-size: 100%;
+        bottom: 10px;
+        right: 10px;
+    }
+    .goods-item__photo_img.activeIMG .imgDynamics {
+        display: block;
+    }
+    .goods-item__photo_img.activeIMG .imgStatic {
+        display: none;
+    }
+}
