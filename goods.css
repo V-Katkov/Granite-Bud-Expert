@@ -33,7 +33,7 @@
     height: 40px;
     bottom: 30px;
     right: 30px;
-    background: url('/img/base/tapPC.png');
+    background: url('./img/base/tapPC.png');
     background-size: 100%;
     opacity: 0.8;
     transition: all 300ms ease;
