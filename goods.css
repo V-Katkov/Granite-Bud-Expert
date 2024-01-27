@@ -127,9 +127,6 @@
         border-bottom: 1px solid #ececec;
         margin-bottom: 20px;
     }
-    .goods-item__photo:target {
-        background: red;
-    }
     .goods-item__info {
         padding: 0;
     }
