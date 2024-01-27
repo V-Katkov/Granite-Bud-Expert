@@ -134,7 +134,7 @@
         padding: 0;
     }
     .goods-item__photo_img::before {
-        background: url('/img/base/tapSmart.png');
+        background: url('./img/base/tapSmart.png');
         background-size: 100%;
         bottom: 10px;
         right: 10px;
